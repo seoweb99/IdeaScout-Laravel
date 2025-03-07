@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\Category;
+use Illuminate\Database\Eloquent\Model;
 
 class CategorySeeder extends Seeder
 {
@@ -43,7 +45,7 @@ class CategorySeeder extends Seeder
             ['name' => 'Watches'],
         ];
 
-        // Insert categories only if they don't already exist
-        DB::table('categories')->insertOrIgnore($categories);
+        // Using the model for insertion
+        Category::insert($categories);
     }
 }

@@ -3,7 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\Phrase;
+use Illuminate\Database\Eloquent\Model;
 
 class PhraseSeeder extends Seeder
 {
@@ -21,8 +22,7 @@ class PhraseSeeder extends Seeder
             ['phrase_en' => 'I will come back later', 'phrase_zh' => '我待会儿回来']
         ];
 
-        foreach ($phrases as $phrase) {
-            DB::table('phrases')->insert($phrase);
-        }
+        // Using the model for insertion
+        Phrase::insert($phrases);
     }
 }
