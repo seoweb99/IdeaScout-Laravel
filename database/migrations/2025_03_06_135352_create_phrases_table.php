@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('phrases', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('phrase_en');
+            $table->string('phrase_zh');
         });
     }
 

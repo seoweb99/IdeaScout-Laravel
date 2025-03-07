@@ -9,14 +9,15 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+   // In the create_categories_table.php file:
+    public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+    Schema::create('categories', function (Blueprint $table) {
+        $table->id();  // This creates an auto-incrementing primary key
+        $table->string('name');  // This creates a VARCHAR column
+    });
     }
-
+    
     /**
      * Reverse the migrations.
      */
